@@ -39,7 +39,7 @@
         prop="password"
         :rules="[
       { required: true, message: '密码不能为空', trigger: 'blur' },
-            {min: 6,max: 10,message: '长度应在6到20位之间'}
+            {min: 6,max: 15,message: '长度应在6到15位之间'}
     ]"
       >
         <el-input

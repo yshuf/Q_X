@@ -550,7 +550,11 @@ export default {
         ],
         series: [
           {
-            name: "2016 降雨量",
+            type: "line",
+            smooth: true,
+            data: []
+          },
+          {
             type: "line",
             smooth: true,
             data: []
@@ -563,6 +567,7 @@ export default {
       myChart.showLoading();
       var dataX = []; // 实际 存放x 轴数据
       var dataY = []; // 实际 存放y 轴数据
+      var dataZ=[];
       // 实时更新数据
       let timeTicket;
       clearInterval(timeTicket);
@@ -579,6 +584,8 @@ export default {
         dataY.push(that.rain1);
         // 隐藏加载动画
         myChart.hideLoading();
+        var rain =localStorage.getItem('降雨量');
+        dataZ.push(rain);
         // 重新绘图
         myChart.setOption({
           xAxis: {
@@ -587,6 +594,9 @@ export default {
           series: [
             {
               data: dataY
+            },
+            {
+              data: dataZ
             }
           ]
         });
@@ -624,6 +634,26 @@ export default {
                 color: "blue"
               }
             }
+          },
+          {
+            data: [],
+            type: "line",
+            symbol: "triangle",
+            symbolSize: 20,
+            lineStyle: {
+              normal: {
+                color: "red",
+                width: 4,
+                type: "dashed"
+              }
+            },
+            itemStyle: {
+              normal: {
+                borderWidth: 3,
+                borderColor: "yellow",
+                color: "blue"
+              }
+            }
           }
         ]
       };
@@ -632,6 +662,7 @@ export default {
       myChart.showLoading();
       var dataX = [];
       var dataY = [];
+      var dataZ =[];
       let timeTicket;
       clearInterval(timeTicket);
       timeTicket = setInterval(function() {
@@ -643,7 +674,8 @@ export default {
         dataX.push(time);
         dataY.push(that.stem1);
         myChart.hideLoading();
-
+        var stem =localStorage.getItem('土壤温度');
+        dataZ.push(stem);
         myChart.setOption({
           xAxis: {
             data: dataX
@@ -651,6 +683,9 @@ export default {
           series: [
             {
               data: dataY
+            },
+            {
+              data: dataZ
             }
           ]
         });
@@ -702,6 +737,11 @@ export default {
             name: "当前气温",
             type: "line",
             data: []
+          },
+          {
+            name: "设置的最高温",
+            type: "line",
+            data:[]
           }
         ]
       };
@@ -714,6 +754,7 @@ export default {
       myChart.showLoading();
       var dataX = []; // 实际 存放x 轴数据
       var dataY = []; // 实际 存放y 轴数据
+      var dataZ =[];
       // 实时更新数据
       let timeTicket;
       clearInterval(timeTicket);
@@ -729,6 +770,8 @@ export default {
         dataY.push(that.shum1);
         // 隐藏加载动画
         myChart.hideLoading();
+        var shum=localStorage.getItem('土壤湿度');
+        dataZ.push(shum);
         // 重新绘图
         myChart.setOption({
           xAxis: {
@@ -737,6 +780,9 @@ export default {
           series: [
             {
               data: dataY
+            },
+            {
+              data: dataZ
             }
           ]
         });
@@ -747,7 +793,7 @@ export default {
       var myChart = this.$echarts.init(document.getElementById("大气压强"));
       let option = {
         title: {
-          text: "风速与时间关系图",
+          text: "大气压强与时间关系图",
           x: "center"
         },
         tooltip: {
@@ -972,6 +1018,11 @@ export default {
             name: "光照强度",
             type: "line",
             data: []
+          },
+          {
+            name: "设置最大光照强度",
+            type:　"line",
+            data: []
           }
         ]
       };
@@ -983,6 +1034,7 @@ export default {
       var that = this;
       var dataX = []; // 实际 存放x 轴数据
       var dataY = []; // 实际 存放y 轴数据
+      var dataZ = [];
       // 实时更新数据
       let timeTicket;
       clearInterval(timeTicket);
@@ -998,6 +1050,8 @@ export default {
         dataY.push(that.il1um1);
         // 隐藏加载动画
         myChart.hideLoading();
+        var illum=localStorage.getItem("光照强度");
+        dataZ.push(illum);
         // 重新绘图
         myChart.setOption({
           xAxis: {
@@ -1006,6 +1060,9 @@ export default {
           series: [
             {
               data: dataY
+            },
+            {
+              data: dataZ
             }
           ]
         });
