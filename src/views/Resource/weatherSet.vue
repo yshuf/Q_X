@@ -144,7 +144,7 @@ export default {
   position: absolute;
   right: 0;
   background: transparent;
-  animation: imgMove 1s;
+  animation: imgMove 1s infinite;
 }
 @keyframes imgMove {
   0% {

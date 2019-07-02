@@ -39,7 +39,7 @@ import NotFound from '@/components/404'
 Vue.use(Router)
 
 const router = new Router({
-  // mode:'history',  // 去掉路由地址的 # 
+  mode:'history',  // 去掉路由地址的 # 
   routes: [
     {
       path: '/',

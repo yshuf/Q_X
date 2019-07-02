@@ -5,11 +5,6 @@
         {{items.name}}
         <div style="display: flex;position: relative;">
           <div :id="items.name" :style="{width: '1000px',height: '500px'}"></div>
-          <!-- 标准区设置，只有管理员能看见，设置了以后该曲线标准会成为标准区的参考样式，今日消息中会有两条线 -->
-          <!-- <div v-if="test()" class="standard">
-            <span class="tip">是否设置为标准区参数?</span>
-            <el-button type="success" @click="confirm">确认</el-button>
-          </div> -->
         </div>
         <!-- 数据分析 -->
         <el-table
@@ -91,16 +86,6 @@ export default {
     this.drawLine10();
   },
   methods: {
-    // 验证用户身份
-    test() {
-      if (window.localStorage.getItem("personal") != "员工") {
-        let result = true;
-        return result;
-      } else {
-        let result = false;
-        return result;
-      }
-    },
     // 提交标准区信息
     confirm() {
       this.$confirm("此操作将设置标准区, 是否继续?", "提示", {
@@ -201,7 +186,7 @@ export default {
       var myChart = this.$echarts.init(document.getElementById("空气湿度"));
       myChart.setOption({
         title: {
-          text: "未来24个小时内气温变化"
+          text: "一年来的气温变化"
         },
         tooltip: {
           trigger: "axis"
@@ -244,7 +229,7 @@ export default {
           {
             type: "value",
             axisLabel: {
-              formatter: "{value} °C"
+              formatter: "{value} %RH"
             }
           }
         ],
@@ -267,17 +252,24 @@ export default {
     drawLine3() {
       var myCharts = this.$echarts.init(document.getElementById("氧气浓度"));
       myCharts.setOption({
+        title: {
+          text: "一年来氧气浓度平均分布"
+        },
         xAxis: {
           scale: true
         },
-        yAxis: {
-          scale: true
-        },
+        yAxis: [
+          {
+            type: "value",
+            axisLabel: {
+              formatter: "{value} %"
+            }
+          }
+        ],
         series: [
           {
             type: "effectScatter",
             symbolSize: 20
-            // data: [[172.7, 105.2], [153.4, 42]]
           },
           {
             type: "scatter",
@@ -404,7 +396,10 @@ export default {
         ],
         yAxis: [
           {
-            type: "value"
+            type: "value",
+            axisLabel: {
+              formatter: "{value} mm"
+            }
           }
         ],
         series: [
@@ -455,7 +450,7 @@ export default {
       var myChart = this.$echarts.init(document.getElementById("土壤温度"));
       myChart.setOption({
         title: {
-          text: "一年来平均气温变化"
+          text: "一年来平均土壤温度变化"
         },
         tooltip: {
           trigger: "axis"
@@ -522,8 +517,7 @@ export default {
       var myChart = this.$echarts.init(document.getElementById("土壤湿度"));
       myChart.setOption({
         title: {
-          text: "未来12个小时内气温变化",
-          subtext: "纯属虚构"
+          text: "一年来土壤湿度变化"
         },
         tooltip: {
           trigger: "axis"
@@ -566,7 +560,7 @@ export default {
           {
             type: "value",
             axisLabel: {
-              formatter: "{value} °C"
+              formatter: "{value} %RH"
             }
           }
         ],
@@ -710,9 +704,14 @@ export default {
           boundaryGap: false,
           data: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
         },
-        yAxis: {
-          type: "value"
-        },
+         yAxis: [
+          {
+            type: "value",
+            axisLabel: {
+              formatter: "{value} °"
+            }
+          }
+        ],
         series: [
           {
             name: "风向",
@@ -757,12 +756,28 @@ export default {
           {
             type: "category",
             boundaryGap: false,
-            data: ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"]
+            data: [
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12"
+            ]
           }
         ],
-        yAxis: [
+         yAxis: [
           {
-            type: "value"
+            type: "value",
+            axisLabel: {
+              formatter: "{value} hpa"
+            }
           }
         ],
         series: [
@@ -771,7 +786,7 @@ export default {
             type: "line",
             stack: "总量",
             areaStyle: {},
-            data: [220, 182, 191, 234, 290, 330, 310,516,486,351,245,520]
+            data: [220, 182, 191, 234, 290, 330, 310, 516, 486, 351, 245, 520]
           }
         ]
       });
@@ -804,10 +819,14 @@ export default {
           bottom: "3%",
           containLabel: true
         },
-        yAxis: {
-          type: "log",
-          name: "y"
-        },
+         yAxis: [
+          {
+            type: "value",
+            axisLabel: {
+              formatter: "{value} Lux"
+            }
+          }
+        ],
         series: [
           {
             name: "光照强度",

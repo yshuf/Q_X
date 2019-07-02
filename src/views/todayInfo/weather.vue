@@ -2,6 +2,10 @@
   <div class="weather">
     <!-- 数据实时展示表格 -->
     <el-table
+      v-loading="loading"
+      element-loading-text="拼命加载中"
+      element-loading-spinner="el-icon-loading"
+      element-loading-background="rgba(0, 0, 0, 0.8)"
       :data="tableData"
       style="width: 100%;margin-top:-60px;margin-bottom:20px;"
       :row-class-name="tableRowClassName"
@@ -123,7 +127,8 @@ export default {
       sp1: "",
       dir1: "",
       pre1: "",
-      illum1: ""
+      illum1: "",
+      loading: ""
     };
   },
   mounted() {
@@ -356,9 +361,9 @@ export default {
             data: []
           },
           {
-            name:"最高空气湿度",
-            type:"line",
-            data:[]
+            name: "最高空气湿度",
+            type: "line",
+            data: []
           }
         ]
       };
@@ -389,7 +394,7 @@ export default {
         // 隐藏加载动画
         myChart.hideLoading();
         // 重新绘图
-        var khum =localStorage.getItem('空气湿度');
+        var khum = localStorage.getItem("空气湿度");
         dataZ.push(khum);
         myChart.setOption({
           xAxis: {
@@ -567,7 +572,7 @@ export default {
       myChart.showLoading();
       var dataX = []; // 实际 存放x 轴数据
       var dataY = []; // 实际 存放y 轴数据
-      var dataZ=[];
+      var dataZ = [];
       // 实时更新数据
       let timeTicket;
       clearInterval(timeTicket);
@@ -584,7 +589,7 @@ export default {
         dataY.push(that.rain1);
         // 隐藏加载动画
         myChart.hideLoading();
-        var rain =localStorage.getItem('降雨量');
+        var rain = localStorage.getItem("降雨量");
         dataZ.push(rain);
         // 重新绘图
         myChart.setOption({
@@ -662,7 +667,7 @@ export default {
       myChart.showLoading();
       var dataX = [];
       var dataY = [];
-      var dataZ =[];
+      var dataZ = [];
       let timeTicket;
       clearInterval(timeTicket);
       timeTicket = setInterval(function() {
@@ -674,7 +679,7 @@ export default {
         dataX.push(time);
         dataY.push(that.stem1);
         myChart.hideLoading();
-        var stem =localStorage.getItem('土壤温度');
+        var stem = localStorage.getItem("土壤温度");
         dataZ.push(stem);
         myChart.setOption({
           xAxis: {
@@ -741,7 +746,7 @@ export default {
           {
             name: "设置的最高温",
             type: "line",
-            data:[]
+            data: []
           }
         ]
       };
@@ -754,7 +759,7 @@ export default {
       myChart.showLoading();
       var dataX = []; // 实际 存放x 轴数据
       var dataY = []; // 实际 存放y 轴数据
-      var dataZ =[];
+      var dataZ = [];
       // 实时更新数据
       let timeTicket;
       clearInterval(timeTicket);
@@ -770,7 +775,7 @@ export default {
         dataY.push(that.shum1);
         // 隐藏加载动画
         myChart.hideLoading();
-        var shum=localStorage.getItem('土壤湿度');
+        var shum = localStorage.getItem("土壤湿度");
         dataZ.push(shum);
         // 重新绘图
         myChart.setOption({
@@ -1021,7 +1026,7 @@ export default {
           },
           {
             name: "设置最大光照强度",
-            type:　"line",
+            type: "line",
             data: []
           }
         ]
@@ -1050,7 +1055,7 @@ export default {
         dataY.push(that.il1um1);
         // 隐藏加载动画
         myChart.hideLoading();
-        var illum=localStorage.getItem("光照强度");
+        var illum = localStorage.getItem("光照强度");
         dataZ.push(illum);
         // 重新绘图
         myChart.setOption({
@@ -1077,7 +1082,13 @@ export default {
       return "";
     },
     // 立即刷新
-    refresh() {}
+    refresh() {
+     if(this.loading==true){
+       this.loading=false;
+     }else {
+       this.loading=true;
+     }
+    }
   }
 };
 </script>

@@ -42,6 +42,7 @@
         native-type="submit"
         style="margin-left: 40px;width: 110px;"
         class="login"
+        @click.prevent="handleSubmitClick"
         @click="login('loginForm')"
       >立即登录</el-button>
       <el-button @click="resetForm('loginForm')" type="primary" style="width: 110px;">重置</el-button>
