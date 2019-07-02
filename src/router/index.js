@@ -28,7 +28,6 @@ import WeatherDay from '@/views/historyInfo/day/weatherDay'
 
 import HeaderStard from '@/views/header/headerStard'
 import Weather from '@/views/todayInfo/weather'
-import About from '@/views/About/about'
 
 import Join from '@/views/About/join'
 import HeaderSet from '@/views/Header/HeaderSet'
@@ -144,16 +143,6 @@ const router = new Router({
               component: WeatherDay
             }
           ]
-        },
-        // {
-        //   path: '/index/warn',
-        //   name: 'warn',
-        //   component: SystemWarn
-        // },
-        {
-          path: '/index/about',
-          name: 'about',
-          component: About
         },
         {
           path: '/index/join',

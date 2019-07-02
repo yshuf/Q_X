@@ -41,7 +41,6 @@
           <template slot="title">
             <i class="el-icon-user"></i>关于我们
           </template>
-          <el-menu-item index="/index/about">了解我们</el-menu-item>
           <el-menu-item index="/index/join">加入我们</el-menu-item>
         </el-submenu>
       </el-menu>
