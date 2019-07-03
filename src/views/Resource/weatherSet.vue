@@ -43,21 +43,21 @@ export default {
       list: [
         { label: "空气温度", name: "max_atm_tem", src: "04.png" },
         { label: "空气湿度", name: "max_atm_hum", src: "10.png" },
-        { label: "氧气浓度", name: "max_atm_o2", src: "氧气.jpg" },
-        { label: "降雨量", name: "max_envir_rain", src: "降雨量.jpg" },
+        { label: "氧气浓度", name: "max_atm_o2", src: "o2.jpg" },
+        { label: "降雨量", name: "max_envir_rain", src: "rain.jpg" },
         {
           label: "土壤温度",
           name: "max_soil_tem",
-          src: "土壤温度.jpg"
+          src: "solitem.jpg"
         },
         {
           label: "土壤湿度",
           name: "max_soil_hum",
-          src: "土壤湿度.png"
+          src: "solihum.png"
         },
-        { label: "风速", name: "max_envir_sp", src: "风速.jpg" },
-        { label: "风向", name: "max_envir_dir", src: "风向.jpg" },
-        { label: "大气压强", name: "max_atm_pre", src: "大气压.jpg" },
+        { label: "风速", name: "max_envir_sp", src: "sp.jpg" },
+        { label: "风向", name: "max_envir_dir", src: "dir.jpg" },
+        { label: "大气压强", name: "max_atm_pre", src: "pre.jpg" },
         { label: "光照强度", name: "max_envir_illum", src: "02.png" }
       ]
     };

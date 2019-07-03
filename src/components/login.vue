@@ -29,7 +29,7 @@
       <el-form-item label="验证码" prop="captcha" style="width: 185px;position: relative;">
         <el-input type="text" autocomplete="off" v-model="loginForm.captcha"></el-input>
         <img
-          src="http://10.168.14.3:8080/auth/captcha"
+          src="http://106.15.227.37:8080/auth/captcha"
           alt="验证码"
           title="点击换一张"
           id="img"

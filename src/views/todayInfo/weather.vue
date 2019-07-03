@@ -166,7 +166,7 @@ export default {
     // 连接后台
     connection() {
       // 建立连接对象
-      let socket = new SockJS("http://10.168.14.3:8080/endpoint");
+      let socket = new SockJS("http://106.15.227.37:8080/endpoint");
       // 获取STOMP子协议的客户端对象
       this.stompClient = Stomp.over(socket);
       // 想服务器发起websocket连接
@@ -177,6 +177,7 @@ export default {
           this.stompClient.subscribe("/topic/meteor", msg => {
             // 订阅服务端提供的某个 topic
             // 这里接收从服务器的数据
+            console.log(msg)
             var msg = msg.body.split("&");
             this.ktem1 = msg[0]; // 空气温度
             this.khum1 = msg[1]; // 空气湿度
