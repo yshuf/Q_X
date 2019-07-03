@@ -1077,7 +1077,7 @@ export default {
           }
         ]
       });
-    },
+    }, 
     // 大气压强
     drawLine9() {
       var myChart = this.$echarts.init(document.getElementById("大气压强"));
