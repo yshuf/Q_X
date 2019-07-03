@@ -158,7 +158,8 @@ const router = new Router({
 
 // 路由守卫
 // router.beforeEach((to,from,next)=>{
-//   const isLogin =localStorage.getItem("isLogin");
+//   const isLogin =localStorage.getItem("identity");
+//   console.log(isLogin);
 //   if(to.path=="/login"||to.path=="/register"){
 //     next();
 //   }else {

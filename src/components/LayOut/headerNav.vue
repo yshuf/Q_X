@@ -5,7 +5,7 @@
         <el-row>
           <!-- logo 部分 -->
           <el-col :span="12">
-            <img src="../../assets/logo.jpg" alt>
+            <img src="../../assets/timg.jpg" alt>
             <div class="title">
               <p @click="handle">现代农业综合管理系统</p>
             </div>
@@ -17,7 +17,6 @@
             <div class="userinfo">
               <!-- 头像存放 -->
               <div class="img">
-                <!-- <img src="http://10.168.14.55:8080/headport/3e99f47a362a431d9d40a0fedf153e7c.jpeg" alt=""> -->
                 <img :src="form.imageUrl" alt>
               </div>
 
@@ -246,7 +245,7 @@ export default {
 .nav {
   width: 100%;
   height: 100px;
-  background-color: #b3dbdb;
+  background-color: #87c7f1;
   border-bottom: 1px solid #eee;
 }
 .nav .logo-container {
@@ -332,5 +331,8 @@ export default {
 }
 .el-icon-s-custom {
   margin-top: -100px;
+}
+p {
+  letter-spacing: 6px;
 }
 </style>
