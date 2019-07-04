@@ -41,8 +41,8 @@ export default {
         value: ""
       },
       list: [
-        { label: "空气温度", name: "max_atm_tem", src: "04.png" },
-        { label: "空气湿度", name: "max_atm_hum", src: "10.png" },
+        { label: "空气温度", name: "max_atm_tem", src: "tem.png" },
+        { label: "空气湿度", name: "max_atm_hum", src: "hum.png" },
         { label: "氧气浓度", name: "max_atm_o2", src: "o2.jpg" },
         { label: "降雨量", name: "max_envir_rain", src: "rain.jpg" },
         {
@@ -58,7 +58,7 @@ export default {
         { label: "风速", name: "max_envir_sp", src: "sp.jpg" },
         { label: "风向", name: "max_envir_dir", src: "dir.jpg" },
         { label: "大气压强", name: "max_atm_pre", src: "pre.jpg" },
-        { label: "光照强度", name: "max_envir_illum", src: "02.png" }
+        { label: "光照强度", name: "max_envir_illum", src: "illum.png" }
       ]
     };
   },

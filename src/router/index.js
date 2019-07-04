@@ -1,37 +1,36 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 // 登录，注册，首页
-import Index from '@/views/news/index'
-import Login from '@/components/login'
-import Register from '@/components/register'
+import Index from '@/views/news/Index'
+import Login from '@/components/Login'
+import Register from '@/components/Register'
 
-import Header from '@/views/Header/header'
-import SystemWarn from '@/views/system/systemWarn'
+import Header from '@/views/Header/Header'
+import SystemWarn from '@/views/system/SystemWarn'
 
 // 标准区
 import StardArea from "@/views/header/StardArea"
-import weatherS from '@/views/todayInfo/weatherS'
+import weatherS from '@/views/todayInfo/WeatherS'
 
 // 年
-import History from '@/views/historyInfo/year/history'
-import weatherYear from "@/views/historyInfo/year/weatherYear";
+import History from '@/views/historyInfo/year/History'
+import weatherYear from "@/views/historyInfo/year/WeatherYear";
 
 
 // 月
-import HistoryMonth from '@/views/historyInfo/month/historyMonth'
+import HistoryMonth from '@/views/historyInfo/month/HistoryMonth'
 import WeatherMouth from '@/views/historyInfo/month/weatherMonth'
 
 // 日
-import HistoryDay from '@/views/historyInfo/day/historyDay'
-import WeatherDay from '@/views/historyInfo/day/weatherDay'
+import HistoryDay from '@/views/historyInfo/day/HistoryDay'
+import WeatherDay from '@/views/historyInfo/day/WeatherDay'
 
-import HeaderStard from '@/views/header/headerStard'
-import Weather from '@/views/todayInfo/weather'
+import HeaderStard from '@/views/header/HeaderStard'
+import Weather from '@/views/todayInfo/Weather'
 
-import Join from '@/views/About/join'
+import Join from '@/views/About/Join'
 import HeaderSet from '@/views/Header/HeaderSet'
-import WeatherSet from '@/views/Resource/weatherSet'
+import WeatherSet from '@/views/Resource/WeatherSet'
 // 404 
 import NotFound from '@/components/404'
 
