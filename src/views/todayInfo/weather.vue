@@ -89,9 +89,9 @@ export default {
       tableData: [
         {
           param1: "空气温度:",
-          ktem1: "",
+          data1: "",
           param2: "空气湿度:",
-          hum1: "",
+          data2: "",
           param3: "氧气浓度:",
           data3: "",
           param4: "土壤温度:",
@@ -199,6 +199,7 @@ export default {
             this.tableData[1].data1 = msg[7] + "%RH";
             this.tableData[1].data5 = msg[8] + "Lux";
             this.tableData[0].data3 = msg[9] + "%";
+
           });
         },
         err => {
