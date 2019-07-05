@@ -128,23 +128,6 @@ export default {
         }
       });
     },
-    //   if (
-    //     this.registerForm.username == "" ||
-    //     this.registerForm.password == "" ||
-    //     this.registerForm.email == "" ||
-    //     this.registerForm.sex == ""
-    //   ) {
-    //     this.$message({
-    //       message: "请填写完整注册信息",
-    //       type: "warning",
-    //       center: true
-    //     });
-    //   } else {
-    //     // 向后台发起请求
-
-    //   }
-    // },
-
     // 表单重置
     resetForm(formName) {
       this.$refs[formName].resetFields();

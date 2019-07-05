@@ -19,8 +19,8 @@
 </template>
 
 <script>
-import HeaderNav from "@/components/LayOut/headerNav";
-import Sider from "@/components/LayOut/sider";
+import HeaderNav from "@/components/LayOut/HeaderNav";
+import Sider from "@/components/LayOut/Sider";
 export default {
   name: "index",
   components: {

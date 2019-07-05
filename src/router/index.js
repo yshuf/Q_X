@@ -16,7 +16,6 @@ import weatherS from '@/views/todayInfo/WeatherS'
 import History from '@/views/historyInfo/year/History'
 import weatherYear from "@/views/historyInfo/year/WeatherYear";
 
-
 // 月
 import HistoryMonth from '@/views/historyInfo/month/HistoryMonth'
 import WeatherMouth from '@/views/historyInfo/month/weatherMonth'
@@ -156,15 +155,15 @@ const router = new Router({
 })
 
 // 路由守卫
-// router.beforeEach((to,from,next)=>{
-//   const isLogin =localStorage.getItem("identity");
-//   console.log(isLogin);
-//   if(to.path=="/login"||to.path=="/register"){
-//     next();
-//   }else {
-//     isLogin ? next(): next('/login');
-//   }
-// })
+router.beforeEach((to,from,next)=>{
+  const isLogin =localStorage.getItem("identity");
+  console.log(isLogin);
+  if(to.path=="/login"||to.path=="/register"){
+    next();
+  }else {
+    isLogin ? next(): next('/login');
+  }
+})
 
 
 export default router;
